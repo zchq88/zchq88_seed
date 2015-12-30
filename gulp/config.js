@@ -9,5 +9,7 @@ module.exports = {
     + ' * zchq88_seed\n'
     + ' * @license MIT\n'
     + ' * v' + VERSION + '\n'
-    + ' */\n'
+    + ' */\n',
+    output: 'bin',
+    entry: 'app/app.js'
 };
