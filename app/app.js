@@ -2,5 +2,9 @@
  * @file 入口JS
  * @author zchq88
  */
-var App = angular.module('App', []);
-App.run();
+
+import home from './page/home/home';
+
+var App = angular.module('App', [
+    home.name
+]);

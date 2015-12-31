@@ -23,7 +23,8 @@ module.exports = {
         js: resolveToApp('/**/*!(.spec.js).js'),
         html: [
             resolveToApp('**/*.html')
-        ]
+        ],
+        styl: resolveToApp('**/*.styl')
     },
     serve: serve
 };
