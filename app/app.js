@@ -3,8 +3,8 @@
  * @author zchq88
  */
 
-import home from './page/home/home';
+import page from './page/page';
 
 var App = angular.module('App', [
-    home.name
+    page.name
 ]);
