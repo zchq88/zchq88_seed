@@ -10,7 +10,7 @@ var gutil = require('gulp-util');
 var fs = require('fs');
 
 // 任务入口
-gulp.task('default', ['watch'], function () {
+gulp.task('default', ['rebuild', 'watch'], function () {
     var log = gutil.colors.red('启动完成');
     gutil.log(gutil.colors.bgBlack(log));
 });

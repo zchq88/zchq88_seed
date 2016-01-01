@@ -17,8 +17,6 @@ exports.task = function () {
     var reload = function () {
         return config.serve.reload();
     };
-    gulp.watch(config.paths.js, ['webpack', reload]);
-    gulp.watch(config.paths.styl, ['webpack', reload]);
-    gulp.watch(config.paths.html, ['html', reload]);
+    var allPaths = [].concat([config.paths.js], config.paths.html, [config.paths.styl]);
+    gulp.watch(allPaths, ['rebuild', reload]);
 };
-exports.dependencies = ['rebuild'];
