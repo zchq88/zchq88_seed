@@ -4,22 +4,23 @@
  */
 
 import './home.styl';
+import navbar from '../../widgets/navbar/navbar';
 
 let homeModule = angular.module('home', [
-        'ui.router'
+        'ui.router',
+        navbar.name
     ])
     .config(($stateProvider, $urlRouterProvider) => {
-        'ngInject';
         $urlRouterProvider.otherwise('/');
         $stateProvider
             .state('home', {
                 url: '/',
                 views: {
-                    'app': {
+                    app: {
                         templateUrl: 'page/home/home.html'
                     }
                 }
             });
-    })
+    });
 
 export default homeModule;

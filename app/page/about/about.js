@@ -4,21 +4,22 @@
  */
 
 import './about.styl';
+import navbar from '../../widgets/navbar/navbar';
 
 let aboutModule = angular.module('about', [
-        'ui.router'
+        'ui.router',
+        navbar.name
     ])
     .config(($stateProvider) => {
-        'ngInject';
         $stateProvider
             .state('about', {
                 url: '/about',
                 views: {
-                    'app': {
+                    app: {
                         templateUrl: 'page/about/about.html'
                     }
                 }
             });
-    })
+    });
 
 export default aboutModule;
