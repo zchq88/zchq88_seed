@@ -5,7 +5,7 @@
 
 let navbar = angular.module('navbar', []);
 navbar.controller('navbarCtrl', ['$scope', function ($scope) {
-    $scope.links = ['1', '2'];
+    $scope.links = ['home', 'about'];
 }]);
 
 navbar.directive('navbar', function () {
