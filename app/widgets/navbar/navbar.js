@@ -2,6 +2,7 @@
  * @file home.js
  * @author zchq88
  */
+import './navbar.styl';
 
 let navbar = angular.module('navbar', []);
 navbar.controller('navbarCtrl', ['$scope', function ($scope) {
