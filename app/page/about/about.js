@@ -10,8 +10,8 @@ let aboutModule = angular.module('about', [
         'ui.router',
         navbar.name
     ])
-    .config(($stateProvider) => {
-        $stateProvider
+    .config((stateProvider) => {
+        stateProvider
             .state('about', {
                 url: '/about',
                 views: {

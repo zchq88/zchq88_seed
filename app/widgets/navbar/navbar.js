@@ -1,5 +1,5 @@
 /**
- * @file home.js
+ * @file navbar
  * @author zchq88
  */
 import './navbar.styl';
