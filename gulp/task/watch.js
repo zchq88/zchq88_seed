@@ -6,6 +6,7 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var config = require('../config');// gulp公共配置
+var runSequence = require('gulp-run-sequence');
 
 exports.task = function () {
     config.serve({
@@ -15,8 +16,11 @@ exports.task = function () {
     });
     gutil.log(gutil.colors.red('server启动'));
     var reload = function () {
+        config.serve.reload();
         return config.serve.reload();
     };
     var allPaths = [].concat([config.paths.js], config.paths.html, [config.paths.styl]);
-    gulp.watch(allPaths, ['rebuild', reload]);
+    gulp.watch(allPaths, function () {
+        runSequence('rebuild', reload);
+    });
 };
