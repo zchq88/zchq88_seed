@@ -16,7 +16,6 @@ exports.task = function () {
     });
     gutil.log(gutil.colors.red('server启动'));
     var reload = function () {
-        config.serve.reload();
         return config.serve.reload();
     };
     var allPaths = [].concat([config.paths.js], config.paths.html, [config.paths.styl]);
