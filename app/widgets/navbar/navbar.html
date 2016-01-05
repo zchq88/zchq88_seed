@@ -17,6 +17,12 @@
             <ul class="nav navbar-nav">
                 <li ng-repeat="x in links"><a ui-sref="{{x}}">{{x}}</a></li>
             </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <label id="Hometext" for="HomeInput">{{HomeInput}}</label>
+                    <input class="nav" type="text" id="HomeInput" ng-model="HomeInput">
+                </div>
+            </form>
             <ul class="nav navbar-nav navbar-right">
                 <li ng-repeat="x in links"><a ui-sref="{{x}}">{{x}}</a></li>
             </ul>

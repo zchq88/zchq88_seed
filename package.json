@@ -9,6 +9,7 @@
     "babel-loader": "^5.4.0",
     "browser-sync": "^2.10.1",
     "chai": "^3.4.1",
+    "chai-as-promised": "^5.2.0",
     "css-loader": "^0.23.1",
     "gulp": "^3.9.0",
     "gulp-clean": "^0.3.1",
@@ -24,6 +25,7 @@
     "karma-webpack": "^1.7.0",
     "mocha": "^2.3.4",
     "ng-annotate-loader": "0.0.10",
+    "protractor": "^3.0.0",
     "raw-loader": "^0.5.1",
     "run-sequence": "^1.1.5",
     "style-loader": "^0.13.0",
@@ -33,7 +35,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "karma start"
+    "test": "karma start",
+    "preE2Etest": "webdriver-manager update",
+    "E2Etest": "protractor E2E/protractor-conf.js"
   },
   "keywords": [
     "angular",
