@@ -19,7 +19,7 @@ exports.task = function () {
         return config.serve.reload();
     };
     var webpackPaths = [].concat([config.paths.js], [config.paths.styl]);
-    gulp.watch(config.paths.html, ['html']);
+    gulp.watch(config.paths.html, ['html',reload]);
     gulp.watch(webpackPaths, ['webpack']);
-    gulp.watch(path.join(config.output, '**/*.*'), reload);
+    gulp.watch(path.join(config.output, '**/*.js'), reload);
 };
