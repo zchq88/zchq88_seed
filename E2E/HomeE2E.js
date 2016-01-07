@@ -6,7 +6,6 @@ chai.use(chaiAsPromised);
 var expect = chai.expect;
 
 describe('HomeE2E', function() {
-    this.timeout(15000);
     beforeEach(function() {
         browser.get('/');
     });

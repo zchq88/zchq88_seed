@@ -1,5 +1,5 @@
 exports.config = {
-    allScriptsTimeout: 11000,
+    allScriptsTimeout: 10000,
 
     specs: [
         '*.js'
@@ -12,7 +12,7 @@ exports.config = {
     chromeOnly: true,
     baseUrl: 'http://localhost:3000/',
     framework: 'mocha',
-    jasmineNodeOpts: {
-        defaultTimeoutInterval: 30000
+    mochaOpts: {
+        timeout: 10000
     }
 };
