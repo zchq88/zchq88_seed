@@ -1,8 +1,8 @@
 /**
- * @file 测试navbar
+ * @file 测试navbar控制器
  * @author zchq88
  */
-import navbar from './navbar';
+import navbar from './navbar.ctrl.js';
 
 describe('navbar', function () {
     let scope;

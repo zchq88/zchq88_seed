@@ -3,11 +3,7 @@
  * @author zchq88
  */
 import './navbar.styl';
-
-let navbar = angular.module('navbar', []);
-navbar.controller('navbarCtrl', ['$scope', function ($scope) {
-    $scope.links = ['home', 'about'];
-}]);
+import navbar from './navbar.ctrl.js'
 
 navbar.directive('navbar', function () {
     return {
@@ -15,4 +11,5 @@ navbar.directive('navbar', function () {
         templateUrl: '/widgets/navbar/navbar.html'
     };
 });
+
 export default navbar;

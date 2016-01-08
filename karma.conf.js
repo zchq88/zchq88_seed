@@ -23,13 +23,22 @@ module.exports = function (config) {
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {'app/**/*Spec.js': ['webpack', 'sourcemap']},
+        preprocessors: {
+            'app/**/*Spec.js': ['webpack', 'sourcemap'],
+            'app/**/*(!Spec).js': ['webpack', 'sourcemap', 'coverage']
+        },
 
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['mocha'],
+        reporters: ['mocha', 'coverage'],
+        coverageReporter: {
+            reporters: [
+                {type: 'text-summary'},
+                {type: 'html', dir: 'coverage/'}
+            ]
+        },
 
 
         // web server port
@@ -46,7 +55,7 @@ module.exports = function (config) {
 
 
         // enable / disable watching file and executing tests whenever any file changes
-        autoWatch: true,
+        autoWatch: false,
 
 
         // start these browsers
@@ -56,7 +65,7 @@ module.exports = function (config) {
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: false,
+        singleRun: true,
 
         // Concurrency level
         // how many browser should be started simultaneous
@@ -65,8 +74,13 @@ module.exports = function (config) {
         webpack: {
             devtool: 'inline-source-map',
             module: {
+                preLoaders: [{
+                    test: /\.js$/,
+                    exclude: [/node_modules/,/\.Spec.js$/],
+                    loader: 'isparta-instrumenter'
+                }],
                 loaders: [
-                    {test: /\.js/, exclude: [/app\/lib/, /node_modules/], loader: 'babel'},
+                    {test: /\.js$/, exclude: [/node_modules/], loader: 'ng-annotate!babel'},
                     {test: /\.html/, loader: 'raw'},
                     {test: /\.styl$/, loader: 'style!css!stylus'},
                     {test: /\.css$/, loader: 'style!css'}
@@ -82,6 +96,7 @@ module.exports = function (config) {
             'karma-mocha',
             'karma-webpack',
             'karma-sourcemap-loader',
+            'karma-coverage',
             'karma-mocha-reporter'
         ]
     })
