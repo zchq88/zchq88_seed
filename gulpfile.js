@@ -11,7 +11,7 @@ var fs = require('fs');
 var runSequence = require('gulp-run-sequence');
 
 // 任务入口
-gulp.task('default', ['rebuild'], function () {
+gulp.task('default', ['rebuild_debugs'], function () {
     var log = gutil.colors.red('启动完成');
     gutil.log(gutil.colors.bgBlack(log));
     runSequence('watch');
