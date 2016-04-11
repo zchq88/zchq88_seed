@@ -9,6 +9,7 @@ var gutil = require('gulp-util');
 var uglify = require('gulp-uglify');
 var config = require('../config');// gulp公共配置
 var plumber = require('gulp-plumber');// 报错不退出
+var rev = require('gulp-rev'); //- 对文件名加MD5后缀
 
 exports.task = function () {
     gutil.log(gutil.colors.red(config.entry));
@@ -18,6 +19,9 @@ exports.task = function () {
             .pipe(plumber())
             .pipe(webpack(require('../../webpack.config')))
             .pipe(uglify())
+            .pipe(rev())
             .pipe(gulp.dest(config.output))
+            .pipe(rev.manifest())
+            .pipe(gulp.dest(config.output + '/rev/js'))
     );
 };
