@@ -39,7 +39,7 @@
     "run-sequence": "^1.1.5",
     "style-loader": "^0.13.0",
     "stylus-loader": "^1.4.2",
-    "vinyl-fs": "^2.4.3",
+    "vinyl-fs": "^0.3.0",
     "webpack": "^1.12.9",
     "webpack-stream": "^3.1.0"
   },
