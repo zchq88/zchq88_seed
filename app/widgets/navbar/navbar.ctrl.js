@@ -4,12 +4,12 @@
  */
 
 let navbar = angular.module('navbar', []);
-navbar.controller('navbarCtrl', function ($scope,$http) {
-    $http.get('intface/nav.html')
-        .success(function(response) {
-            $scope.links = response;
-        });
-    //$scope.links = ['home', 'about'];
+navbar.controller('navbarCtrl', function ($scope/*,$http*/) {
+    //$http.get('intface/nav.html')
+    //    .success(function(response) {
+    //        $scope.links = response;
+    //    });
+    $scope.links = ['home', 'about'];
 });
 
 module.exports = navbar;
