@@ -8,9 +8,6 @@ var clean = require('gulp-clean');
 var config = require('../config');// gulp公共配置
 
 exports.task = function () {
-    var streams = [];
-    streams.push(
-        gulp.src(config.output)
-            .pipe(clean({force: true}))
-    );
+  return gulp.src([config.output, config.debug])
+    .pipe(clean({force: true}))
 };

@@ -11,10 +11,10 @@ var fs = require('fs');
 var runSequence = require('gulp-run-sequence');
 
 // 任务入口
-gulp.task('default', ['rebuild_debugs'], function () {
+gulp.task('default', ['clean'], function () {
     var log = gutil.colors.red('启动完成');
     gutil.log(gutil.colors.bgBlack(log));
-    runSequence('watch');
+    runSequence('rebuild');
 });
 
 // 从gulp目录读取任务

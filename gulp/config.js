@@ -17,6 +17,7 @@ module.exports = {
     + ' * v' + VERSION + '\n'
     + ' */\n',
     output: 'bin',
+    debug: 'debug',
     entry: 'app/app.js',
     root: root,
     paths: {

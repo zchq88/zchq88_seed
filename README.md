@@ -24,8 +24,10 @@
     *使用了`chai`
     *使用了`protractor`
 ## 如何使用
-    *npm install安装所有插件
-    *gulp clean 清理生成BIN目录
-    *gulp 构建整个项目到BIN并开启browser-sync服务器试试刷新修改
+    *npm install -g gulp karma karma-cli webpack protractor全局安装
+    *npm install 安装所有插件
     *test 单元测试
+    *debug_server 启动测试html服务 localhost:3000
+    *webpack-dev-server 启动测试webpack服务  localhost:3003
     *E2Etest 网页测试
+    *Prod_bulid 生成项目到BIN文件夹

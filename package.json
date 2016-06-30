@@ -43,11 +43,17 @@
     "webpack": "^1.12.9",
     "webpack-stream": "^3.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "karma-chrome-launcher": "^0.2.3"
+  },
   "scripts": {
     "test": "karma start",
+    "webpack-dev-server": "webpack-dev-server --config webpack.dev.js --inline --progress --profile --colors --watch --display-error-details --display-cached --content-base src/ --hot",
     "preE2Etest": "webdriver-manager update",
-    "E2Etest": "protractor E2E/protractor-conf.js"
+    "E2Etest": "protractor E2E/protractor-conf.js",
+    "preProd_bulid": "gulp clean",
+    "debug_server": "gulp watch",
+    "Prod_bulid": "gulp rebuild"
   },
   "keywords": [
     "angular",
@@ -56,7 +62,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/angularclass/NG6-starter.git"
+    "url": "https://github.com/zchq88/zchq88_seed.git"
   },
   "license": "MIT"
 }

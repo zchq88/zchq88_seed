@@ -10,11 +10,8 @@ var revCollector = require('gulp-rev-collector'); //- 路径替换
 var minifyHtml = require("gulp-minify-html"); //html压缩
 
 exports.task = function () {
-    var streams = [];
-    streams.push(
-        gulp.src([config.output + '/rev/**/*.json', config.output + '/**/*.html'])
-            .pipe(revCollector())
-            .pipe(minifyHtml())
-            .pipe(gulp.dest(config.output))
-    );
+  return gulp.src([config.output + '/rev/**/*.json', config.output + '/**/*.html'])
+    .pipe(revCollector())
+    .pipe(minifyHtml())
+    .pipe(gulp.dest(config.output))
 };

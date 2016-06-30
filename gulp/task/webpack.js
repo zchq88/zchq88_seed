@@ -12,16 +12,13 @@ var plumber = require('gulp-plumber');// 报错不退出
 var rev = require('gulp-rev'); //- 对文件名加MD5后缀
 
 exports.task = function () {
-    gutil.log(gutil.colors.red(config.entry));
-    var streams = [];
-    streams.push(
-        gulp.src(config.entry)
-            .pipe(plumber())
-            .pipe(webpack(require('../../webpack.config')))
-            .pipe(uglify())
-            .pipe(rev())
-            .pipe(gulp.dest(config.output))
-            .pipe(rev.manifest())
-            .pipe(gulp.dest(config.output + '/rev/js'))
-    );
+  gutil.log(gutil.colors.red(config.entry));
+  return gulp.src(config.entry)
+    .pipe(plumber())
+    .pipe(webpack(require('../../webpack.config')))
+    .pipe(uglify())
+    .pipe(rev())
+    .pipe(gulp.dest(config.output))
+    .pipe(rev.manifest())
+    .pipe(gulp.dest(config.output + '/rev/js'))
 };
